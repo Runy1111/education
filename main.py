@@ -3,7 +3,10 @@ class Bird:
     name = None
     alive = None
 
+    def __init__(self, c, n, al):
+        self.set_data(c, n,al)
 
+        self.get_data()
 
     def set_data(self, c, n, al):
         self.color = c
@@ -14,12 +17,6 @@ class Bird:
         print(self.color, "Name:", self.name, ". Alive:", self.alive)
 
 
-first_bird = Bird()
-first_bird.set_data("Red", "RHCP", True)
-first_bird.get_data()
+first_bird = Bird("Red", "RHCP", True)
 
-
-second_bird = Bird()
-second_bird.set_data("Blue", "ACDC", False)
-
-print(first_bird.name)
+second_bird = Bird("Blue", "ACDC", False)
