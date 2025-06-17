@@ -1,24 +1,32 @@
-class Bird:
-    color = None
-    name = None
-    alive = None
+class Building:
+    year = None
+    city = None
 
-    def __init__(self, c=None, n=None, al=None):
-        self.set_data(c, n,al)
+    def __init__(self, year, city):
+        self.year = year
+        self.city = city
 
-        self.get_data()
-
-    def set_data(self, c, n, al=None):
-        self.color = c
-        self.name = n
-        self.alive = al
-
-    def get_data(self):
-        print(self.color, "Name:", self.name, ". Alive:", self.alive)
+    def get_info(self):
+        print("Year:", self.year, ". City:", self.city)
 
 
-first_bird = Bird("Red", "RHCP", True)
-first_bird.set_data("Green", "ABBA")
-first_bird.get_data()
+class School(Building):
+    studs = 0
 
-second_bird = Bird("Blue", "ACDC", False)
+    def __init__(self, studs, year, city):
+        super(School, self).__init__(year, city)
+        self.studs = studs
+
+
+class House(Building):
+    pass
+
+
+class Shop(Building):
+    pass
+
+
+school = School(150, 2007, "Moscow")
+school.get_info()
+house = House(2007, "Moscow")
+shop = Shop(2007, "Moscow")
