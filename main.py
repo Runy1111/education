@@ -17,6 +17,10 @@ class School(Building):
         super(School, self).__init__(year, city)
         self.studs = studs
 
+    def get_info(self):
+        super().get_info()
+        print("Students:", self.studs)
+
 
 class House(Building):
     pass
