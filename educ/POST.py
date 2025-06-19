@@ -25,6 +25,9 @@ headers = {
     "X-Amzn-Trace-Id": "Root=1-68541f04-3cdfe3710f2ebed55010bba3"
   }
 
-response = requests.post('https://httpbin.org/post', headers=headers, data=data)
+variable = requests.Session()
+
+ara = variable.get('https://httpbin.org/form/post')
+response = variable.post('https://httpbin.org/post', headers=headers, data=data, allow_redirects=True)
 
 print(response.text)
