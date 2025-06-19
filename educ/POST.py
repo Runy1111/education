@@ -1,6 +1,14 @@
 import requests
 
-headers ={
+data = {'custname': 'Сергей Корешков',
+        'custtel': '89651779883',
+        'custemail': 'serezha.koreshkov@gmail.com',
+        'size': 'small',
+        'topping': 'mushroom',
+        'delivery': '18:45',
+        'comments': ''}
+
+headers = {
     "Accept": "application/json",
     "Accept-Encoding": "gzip, deflate, br, zstd",
     "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -17,6 +25,6 @@ headers ={
     "X-Amzn-Trace-Id": "Root=1-68541f04-3cdfe3710f2ebed55010bba3"
   }
 
-response = requests.get('https://httpbin.org/headers', headers=headers)
+response = requests.post('https://httpbin.org/post', headers=headers, data=data)
 
 print(response.text)
